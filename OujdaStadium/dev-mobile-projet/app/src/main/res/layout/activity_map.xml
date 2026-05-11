@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Header avec boutons - VERSION CORRIGÉE -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:gravity="center_vertical">
+
+        <!-- Bouton Retour avec largeur fixe -->
+        <Button
+            android:id="@+id/btnRetour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🡰 Retour"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#9E9E9E"
+            android:textColor="#2196F3"
+          />
+
+        <!-- Titre au centre avec texte sur 2 lignes -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sélectionnez\nl'emplacement"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:maxLines="2"
+            android:singleLine="false" />
+
+        <!-- Bouton Confirmer avec largeur fixe -->
+        <Button
+            android:id="@+id/btnConfirmerLocalisation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmer"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="16dp"
+            android:minWidth="0dp" />
+
+    </LinearLayout>
+
+    <!-- Barre de recherche AVEC AUTOCOMPLÉTION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#F5F5F5"
+        android:elevation="2dp"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rechercher un lieu à Oujda... (ex: Dhar Lamhala)"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:imeOptions="actionSearch"
+            android:singleLine="true" />
+
+        <!-- Liste des suggestions -->
+        <ListView
+            android:id="@+id/suggestionsListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="400dp"
+            android:visibility="gone"
+            android:background="@android:color/white"
+            android:elevation="8dp"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- Indicateur de localisation -->
+    <LinearLayout
+        android:id="@+id/locationStatusLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="#E3F2FD"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/locationStatusText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Localisation en cours..."
+            android:textSize="14sp"
+            android:textColor="#1976D2" />
+
+        <ProgressBar
+            android:id="@+id/locationProgress"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+    <!-- Carte OsmDroid -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

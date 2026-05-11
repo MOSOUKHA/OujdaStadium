@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#e8f5e9"/>  <!-- Fond vert très clair -->
+            <stroke android:width="2dp" android:color="#388e3c"/> <!-- Bordure verte -->
+            <corners android:radius="28dp"/> <!-- Coins arrondis -->
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#ffffff"/> <!-- Fond blanc -->
+            <stroke android:width="2dp" android:color="#388e3c"/> <!-- Bordure verte -->
+            <corners android:radius="28dp"/> <!-- Coins arrondis -->
+        </shape>
+    </item>
+</selector>
+<!-- Normal : Bouton discret (fond blanc + bordure)
+     Pressé : Feedback clair (fond vert clair) pour confirmer l'action
+
+Quand le bouton est au repos :
+┌─────────────────────────────┐
+│    👁️ Voir tous les avis     │ ← Fond blanc, bordure verte
+└─────────────────────────────┘
+
+Quand l'utilisateur appuie sur le bouton :
+┌─────────────────────────────┐
+│    👁️ Voir tous les avis     │ ← Fond vert pâle (#e8f5e9)
+└─────────────────────────────┘
+-->

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#ffffff"/>
+    <stroke android:width="1.5dp" android:color="#e0e0e0"/>
+    <corners android:radius="8dp"/>
+</shape>
+<!-- Ce fichier XML définit un shape drawable pour Android qui crée un rectangle avec des bords arrondis et une bordure.
+<solid android:color="#ffffff"/>
+Fond blanc - Crée un arrière-plan complètement blanc à l'intérieur de la forme
+<stroke android:width="1.5dp" android:color="#e0e0e0"/>
+Bordure gris clair
+Épaisseur : 1.5dp (environ 3 pixels sur les écrans standard)
+Couleur : Gris très clair (#e0e0e0)
+<corners android:radius="8dp"/>
+Coins arrondis avec un rayon de 8dp
+Donne un effet légèrement arrondi aux angles
+Assez subtil pour garder un look professionnel
+-->
+<!--Cela crée une carte ou conteneur élégant avec :
+Fond blanc
+Bordure gris clair fine
+Coins légèrement arrondis
+-->

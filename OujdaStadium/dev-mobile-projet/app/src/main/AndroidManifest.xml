@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.foottest">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="OujdaStadium"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+
+        <!-- MainActivity (écran de connexion) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name=".FavActivity"
+            android:exported="false"
+            />
+
+        <!-- AccueilActivity (écran principal après connexion) -->
+        <activity
+            android:name=".AccueilActivity"
+            android:exported="false" />
+
+        <!-- TerrainsActivity -->
+        <activity
+            android:name=".TerrainsActivity"
+            android:exported="false" />
+
+        <!-- DetailTerrainActivity -->
+        <activity
+            android:name=".DetailTerrainActivity"
+            android:exported="false" />
+
+        <!-- LoginActivity (inscription) -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MesReservationsActivity"
+            android:exported="false"
+            />
+        <!-- GestionStadesActivity (pour les admins) -->
+        <activity
+            android:name=".GestionStadesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReservationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+
+    </application>
+
+    <!-- ✅ Permissions nécessaires -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Pour Android 12 et inférieur -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Pour Android 13+ (API 33+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+
+</manifest>

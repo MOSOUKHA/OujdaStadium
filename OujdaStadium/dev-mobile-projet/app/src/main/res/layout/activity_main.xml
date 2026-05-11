@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grass"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Overlay semi-transparent pour améliorer la lisibilité -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="#CC000000"
+            android:padding="32dp"
+            android:layout_marginTop="40dp"
+            android:elevation="8dp">
+
+            <!-- En-tête -->
+            <ImageView
+                android:layout_width="299dp"
+                android:layout_height="124dp"
+                android:src="@drawable/download1" />
+
+            <TextView
+                android:text="Réserve ton terrain en quelques clics"
+                android:textSize="16sp"
+                android:textColor="#BBBBBB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:gravity="center"/>
+
+            <!-- Formulaire de connexion -->
+            <TextView
+                android:text="CONNEXION"
+                android:textSize="14sp"
+                android:textColor="#4CAF50"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Champ Email -->
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Email"
+                android:textColorHint="#888888"
+                android:textColor="@android:color/black"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:maxWidth="320dp"/>
+
+            <!-- Champ Mot de passe -->
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Mot de passe"
+                android:textColorHint="#888888"
+                android:textColor="@android:color/black"
+                android:inputType="textPassword"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="24dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:maxWidth="320dp"/>
+
+            <!-- Bouton Se connecter -->
+            <Button
+                android:id="@+id/connecter"
+                android:text="SE CONNECTER"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:elevation="4dp"
+                android:layout_marginBottom="16dp"
+                android:maxWidth="320dp"/>
+
+            <!-- Lien d'inscription -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Pas de compte ? "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#BBBBBB"/>
+
+                <TextView
+                    android:id="@+id/inscrire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S'inscrire"
+                    android:textColor="#4CAF50"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"/>
+            </LinearLayout>
+
+            <!-- Séparateur -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333333"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                android:maxWidth="320dp"/>
+
+            <!-- Bouton Voir les terrains -->
+            <Button
+                android:id="@+id/voir"
+                android:layout_width="269dp"
+                android:layout_height="56dp"
+                android:backgroundTint="#fb8500"
+                android:elevation="4dp"
+                android:maxWidth="320dp"
+                android:text="VOIR LES TERRAINS DISPONIBLES"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

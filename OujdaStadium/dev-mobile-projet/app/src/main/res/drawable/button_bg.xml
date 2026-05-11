@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#1b5e20"/>
+            <corners android:radius="28dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#388e3c"/>
+            <corners android:radius="28dp"/>
+        </shape>
+    </item>
+</selector>
+
+<!-- Ce qu'il fait :
+État pressé (state_pressed="true") : Quand l'utilisateur appuie sur le bouton
+Couleur de fond : #1b5e20
+Coins arrondis : 28dp
+État normal (par défaut) : Quand le bouton est au repos
+Couleur de fond : #388e3c
+Coins arrondis : 28dp
+-->

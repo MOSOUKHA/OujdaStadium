@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_stades"
+        android:title="Mes Stades"
+        android:icon="@drawable/ic_stadium"/>
+
+    <item
+        android:id="@+id/nav_reservations"
+        android:title="Réservations"
+        android:icon="@drawable/ic_reservation"/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Compte"
+        android:icon="@drawable/ic_account"/>
+</menu>

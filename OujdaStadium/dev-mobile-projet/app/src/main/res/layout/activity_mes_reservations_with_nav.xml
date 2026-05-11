@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grass"
+    android:orientation="vertical">
+
+    <!-- Header -->
+
+    <!-- Boutons d'action -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="193dp"
+            android:layout_height="53dp"
+            android:src="@drawable/download1" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Menu Icon on the right -->
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_menu1"
+            android:contentDescription="Menu"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+
+    </LinearLayout>
+    <!-- Search Bar Section -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:paddingHorizontal="8dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center_vertical">
+
+        <!-- Search Icon -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_search"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Search Input -->
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="318dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Rechercher un stade..."
+            android:imeOptions="actionSearch"
+            android:maxLines="1"
+            android:paddingVertical="14dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#CCCCCC"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+    <!-- ScrollView pour les réservations -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp">
+
+        <LinearLayout
+            android:id="@+id/reservationsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</LinearLayout>

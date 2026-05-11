@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true"
+    android:layout_marginBottom="12dp"
+    android:padding="8dp">
+    <!-- android: → Attributs standards Android
+         card_view: → Attributs spéciaux pour CardView
+         android:layout_width="match_parent"  ← Prend toute la largeur
+         android:layout_height="wrap_content"  ← Hauteur selon le contenu
+         card_view:cardCornerRadius="12dp" ← Coins arrondis (12dp) 12dp = légèrement arrondi, 25dp = très arrondi
+         android:layout_marginBottom="12dp" ← Marge en BAS de la carte
+         android:padding="8dp" ← Espace INTERNE dans la carte
+    -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgThumb"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <!-- android:id="@+id/imgThumb" ← Donne un nom à l'image : imgThumb et Permet de la contrôler dans le code Java/Kotlin
+            android:layout_width="90dp" android:layout_height="90dp" ← Crée un carré de 90x90 points
+            android:scaleType="centerCrop" ← Agrandit l'image pour remplir tout l'espace + Centre l'image + Coupe ce qui dépasse
+            android:layout_alignParentStart="true" ← Colle l'image au début (gauche pour langues LTR) , Comme alignParentLeft="true"
+            ic_launcher_background ← déjà créé par Android Studio , C'est l'arrière-plan de l'icône de ton app
+                                   ←  pour tester ton layout.Quand tu auras tes vraies images de terrains, remplace par : android:src="@drawable/ton_image_terrain"
+        -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_toEndOf="@id/imgThumb"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom du terrain"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+        <!-- android:id="@+id/tvName" ← Donne un nom au texte : tvName + tv = TextView (convention de nommage)
+             android:layout_toEndOf="@id/imgThumb" ← Place le texte À DROITE de l'image imgThumb + toEndOf = "à la fin de" (droit pour langues LTR)
+             android:layout_marginStart="12dp"  ← Espace de 12dp entre l'image et le texte + marginStart = marge au début (gauche)
+        -->
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_below="@id/tvName"
+            android:layout_toEndOf="@id/imgThumb"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ville, quartier"
+            android:textSize="13sp"/>
+        <!-- android:id="@+id/tvLocation" ← Donne un nom au texte : tvLocation + tv = TextView (convention de nommage)
+             android:layout_toEndOf="@id/imgThumb" ← Place le texte À DROITE de l'image imgThumb + toEndOf = "à la fin de" (droit pour langues LTR)
+             android:layout_below="@id/tvName" ← Place le texte sous le texte tvName
+             android:layout_marginStart="12dp"  ← Espace de 12dp entre l'image et le texte + marginStart = marge au début (gauche)
+        -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_below="@id/tvLocation"
+            android:layout_toEndOf="@id/imgThumb"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prix: 50 MAD/h"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="★ 4.8"
+            android:background="@drawable/rounded_gray"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:padding="10dp"
+            android:textSize="13sp"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

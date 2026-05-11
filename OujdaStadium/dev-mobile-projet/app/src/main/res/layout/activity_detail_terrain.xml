@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ✅ CHANGEMENT: ScrollView → androidx.core.widget.NestedScrollView -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f7f6"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Photos du terrain -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scrollbars="none"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/gallery_placeholder_bg">
+
+            <LinearLayout
+                android:id="@+id/imagesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvNoPhotos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📸 Aucune photo disponible"
+                    android:textColor="#999999"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Carte de détails -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/form_card_bg"
+            android:padding="20dp">
+
+            <!-- Nom du terrain -->
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stade Leziris Jouhari"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Localisation -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_location"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oujda, Iris"
+                    android:textSize="15sp"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
+            <!-- Prix -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_price"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50 MAD / heure"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#2e7d32" />
+            </LinearLayout>
+
+            <!-- Avis -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_star"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/tvReviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5/5 (24 avis)"
+                    android:textSize="15sp"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description du terrain..."
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"/>
+
+            <!-- Capacité -->
+            <LinearLayout
+                android:id="@+id/capacityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_group"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/tvCapacity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capacité: 20 personnes"
+                    android:textSize="15sp"
+                    android:textColor="#555555" />
+            </LinearLayout>
+
+            <!-- Séparateur -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Titre créneaux -->
+            <TextView
+                android:id="@+id/tvSlotsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Créneaux disponibles"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginBottom="12dp" />
+
+            <!-- ✅ RecyclerView avec wrap_content ET nestedScrollingEnabled="false" -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSlots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Bouton Voir tous les avis -->
+            <Button
+                android:id="@+id/btnSeeAllReviews"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Voir tous les avis"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#388e3c"
+                android:drawablePadding="8dp"
+                android:background="@drawable/button_outline_bg"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Bouton Réserver -->
+            <Button
+                android:id="@+id/btnBook"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Réserver maintenant"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:drawablePadding="8dp"
+                android:background="@drawable/button_bg"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Bouton Voir sur la carte -->
+            <Button
+                android:id="@+id/btnOpenMap"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Voir sur la carte"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#388e3c"
+                android:drawablePadding="8dp"
+                android:background="@drawable/button_outline_bg" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
